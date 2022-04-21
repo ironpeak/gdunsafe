@@ -25,3 +25,24 @@ macro_rules! load_resource {
         }
     };
 }
+
+#[cfg(test)]
+mod test_compilation {
+    use gdnative::api::*;
+    use gdnative::object::TRef;
+
+    #[test]
+    fn test_load_resource_path() {
+        let _: TRef<Resource> = load_resource!("");
+    }
+
+    #[test]
+    fn test_load_resource_path_type_hint() {
+        let _: TRef<Resource> = load_resource!("", "");
+    }
+
+    #[test]
+    fn test_load_resource_path_type_hint_p_no_cache() {
+        let _: TRef<Resource> = load_resource!("", "", false);
+    }
+}
