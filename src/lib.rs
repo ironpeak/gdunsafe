@@ -1,2 +1,2 @@
-pub mod node;
-pub mod resource_loader;
+mod node;
+mod resource_loader;

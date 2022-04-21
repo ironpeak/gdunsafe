@@ -27,7 +27,6 @@ macro_rules! get_node {
     };
 }
 
-#[macro_export]
 macro_rules! __impl_get_node_type {
     ($name:ident, $type:tt) => {
         #[macro_export]
@@ -251,7 +250,6 @@ mod test_compilation {
         let _: TRef<Node> = get_node!(node, "");
     }
 
-    #[macro_export]
     macro_rules! __impl_get_node_type_test {
         ($name:ident, $type:tt) => {
             paste::item! {
